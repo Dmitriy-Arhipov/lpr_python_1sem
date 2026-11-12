@@ -16,4 +16,7 @@ df = pd.read_csv("http://python.mipt.ru/lpr/extra/lab09/Titanic.csv")
 df['Age group'] = df['Age'].apply(f)
 df = df[df['Age group'].notna()]
 answer = (df.groupby('Age group').agg({'Survived': 'mean'}))
+answer2 = df.groupby(['Pclass']).agg({'Age':'mean'})
 print(answer)
+
+
